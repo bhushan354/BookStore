@@ -1,9 +1,10 @@
 import React from 'react';
+import AllBooks from './AllBooks';
 
 function Home() {
   return (
     <div>
-      <h2>This is Home</h2>
+      <AllBooks />
     </div>
   );
 }
