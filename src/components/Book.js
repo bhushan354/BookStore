@@ -15,17 +15,17 @@ const Book = ({ title, author, itemId }) => {
     <div>
       <form onSubmit={clearBookFunc}>
         <div>
-          <p>
+          <h2>
             {itemId}
-          </p>
-          <p>
+          </h2>
+          <h2>
             Title:
             {title}
-          </p>
-          <p>
+          </h2>
+          <h2>
             Author:
             {author}
-          </p>
+          </h2>
         </div>
         <button type="submit">
           Remove
