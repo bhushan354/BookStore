@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 <div align="center">
-  <h3><b>Math-Magician</b></h3>
+  <h3><b>Book-Store</b></h3>
 </div>
 
 # 📗 Table of Contents
@@ -31,6 +31,7 @@ Read a random math-related quote.
  - HTML 
  - CSS
  - JAVASCRIPT
+ - Redux
  - React
  - Api
 
@@ -58,8 +59,8 @@ To get a local copy up and running follow these simple example steps.
 
 - Choose a directory
 - Open a Terminal
-- write: git clone git@github.com:zhorabay/Awesome-books.git
-- get into to directory "Awesome-books"
+- write: git clone git@github.com:bhushan354/BookStore.git
+- get into to directory "BookStore"
 - write: npm install
 [
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
