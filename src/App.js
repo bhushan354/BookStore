@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import './App.css';
 import {
   BrowserRouter, Routes, Route, Link,
