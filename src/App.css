@@ -20,9 +20,8 @@ body {
 
 header {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  background-color: #f5f6fa;
+  flex-direction: column;
 }
 
 nav {
@@ -257,4 +256,8 @@ div[role='progressbar'] {
   color: var(--fg);
   border-radius: 50%;
   display: grid;
+}
+
+.thirdFlex {
+  margin-right: 300px;
 }
