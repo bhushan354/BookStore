@@ -1,23 +1,25 @@
 import React from 'react';
-import Newbook from './Newbook';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 
 function AllBooks() {
-  const books = [
-    { title: 'A', author: 'Author A' },
-    { title: 'B', author: 'Author B' },
-    { title: 'C', author: 'Author C' },
-  ];
-  return (
-    <>
-      {books.map((book) => (
-        <div key={book.title}>
-          <Book title={book.title} author={book.author} />
-        </div>
-      ))}
-      <Newbook />
-    </>
-  );
+  const allBooks = useSelector((state) => state.book.allBook);
+
+  const bookComponents = [];
+
+  for (let i = 0; i < allBooks.length; i += 1) {
+    const book = allBooks[i];
+    bookComponents.push(
+      <Book
+        key={book.item_id}
+        title={book.title}
+        author={book.author}
+        itemId={book.item_id}
+      />,
+    );
+  }
+
+  return <>{bookComponents}</>;
 }
 
 export default AllBooks;

@@ -1,11 +1,16 @@
 import React from 'react';
 import AllBooks from './AllBooks';
+import Newbook from './Newbook';
 
 function Home() {
   return (
-    <div>
-      <AllBooks />
-    </div>
+    <>
+      <div>
+        <h1>This is Home</h1>
+        <AllBooks />
+        <Newbook />
+      </div>
+    </>
   );
 }
 
