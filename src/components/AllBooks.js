@@ -1,25 +1,39 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchAllBooks } from '../redux/books/bookSlice';
 import Book from './Book';
 
-function AllBooks() {
-  const allBooks = useSelector((state) => state.book.allBook);
+const AllBooks = () => {
+  const {
+    books, pending, complete,
+  } = useSelector((store) => store.book);
+  const dispatch = useDispatch();
 
-  const bookComponents = [];
+  useEffect(() => {
+    dispatch(fetchAllBooks());
+  }, [dispatch, complete]);
 
-  for (let i = 0; i < allBooks.length; i += 1) {
-    const book = allBooks[i];
-    bookComponents.push(
-      <Book
-        key={book.item_id}
-        title={book.title}
-        author={book.author}
-        itemId={book.item_id}
-      />,
+  if (pending) {
+    return (
+      <div>
+        <h2>Your Books Are Loading...</h2>
+      </div>
     );
   }
+  if (books.length === 0) return <h1>Empty List , Add some Books</h1>;
 
-  return <>{bookComponents}</>;
-}
+  // for render method fixing previousLoop was map , checkAgian
+  const bookElements = [];
+
+  books.forEach((book) => {
+    bookElements.push(
+      <div key={book.id}>
+        <Book key={book.id} book={book} />
+      </div>,
+    );
+  });
+
+  return bookElements;
+};
 
 export default AllBooks;
