@@ -13,24 +13,19 @@ const Book = ({ title, author, itemId }) => {
 
   return (
     <div>
-      <form onSubmit={clearBookFunc}>
-        <div>
-          <h2>
-            {itemId}
-          </h2>
-          <h2>
-            Title:
-            {title}
-          </h2>
-          <h2>
-            Author:
-            {author}
-          </h2>
-        </div>
-        <button type="submit">
-          Remove
-        </button>
-      </form>
+      <div>
+        <h2>
+          Title:
+          {title}
+        </h2>
+        <h3>
+          Author:
+          {author}
+        </h3>
+      </div>
+      <button type="submit" onClick={clearBookFunc}>
+        Remove
+      </button>
     </div>
   );
 };

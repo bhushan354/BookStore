@@ -14,7 +14,7 @@ function AllBooks() {
         key={book.item_id}
         title={book.title}
         author={book.author}
-        item_id={book.item_id}
+        itemId={book.item_id}
       />,
     );
   }

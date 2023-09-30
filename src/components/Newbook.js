@@ -40,14 +40,14 @@ function Newbook() {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Title..."
+          placeholder="Your Title Here..."
           name="title"
           value={bookData.title}
           onChange={handleChange}
         />
         <input
           type="text"
-          placeholder="Author..."
+          placeholder="Name Of Author..."
           name="author"
           value={bookData.author}
           onChange={handleChange}
