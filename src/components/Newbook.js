@@ -1,61 +1,56 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React, { useState } from 'react';
+import { nanoid } from 'nanoid';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/bookSlice';
+import { newBook } from '../redux/books/bookSlice';
 
-function Newbook() {
+const Newbook = () => {
   const dispatch = useDispatch();
-  const [bookData, setBookData] = useState({
+  const [handleChaneg, sethandleChaneg] = useState({
     title: '',
     author: '',
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setBookData({
-      ...bookData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (bookData.title !== '' && bookData.author !== '') {
-      dispatch(
-        addBook({
-          ...bookData,
-          category: 'Action',
-          item_id: Date.now().toString(),
-        }),
-      );
-      setBookData({
-        title: '',
-        author: '',
-      });
-    }
+  const handleSubmitChanges = (event) => {
+    event.preventDefault();
+    const id = nanoid();
+    const book = { id, ...handleChaneg };
+    dispatch(newBook(book));
+    sethandleChaneg(handleChaneg);
   };
 
   return (
     <div>
-      <p>Add a new Book!</p>
-      <form onSubmit={handleSubmit}>
+      <h2>Add Book to the list!</h2>
+      <div>
         <input
           type="text"
           placeholder="Your Title Here..."
           name="title"
-          value={bookData.title}
-          onChange={handleChange}
+          value={handleChaneg.title}
+          onChange={(event) => {
+            const { name, value } = event.target;
+            const textContaints = { [name]: value };
+            sethandleChaneg({ ...handleChaneg, ...textContaints });
+          }}
         />
         <input
           type="text"
-          placeholder="Name Of Author..."
+          placeholder="Your Author Here..."
           name="author"
-          value={bookData.author}
-          onChange={handleChange}
+          value={handleChaneg.author}
+          onChange={(event) => {
+            const { name, value } = event.target;
+            const textContaints = { [name]: value };
+            sethandleChaneg({ ...handleChaneg, ...textContaints });
+          }}
         />
-        <button type="submit">Add Book</button>
-      </form>
+        <button type="submit" onClick={handleSubmitChanges}>
+          Add
+        </button>
+      </div>
     </div>
   );
-}
+};
 
 export default Newbook;
