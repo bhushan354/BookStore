@@ -16,7 +16,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #f5f6fa;
 }
 
 header {
@@ -119,8 +118,6 @@ ul {
 }
 
 li {
-  background-color: #eff0f1;
-  border-radius: 4px;
   cursor: pointer;
   opacity: 1;
 }
