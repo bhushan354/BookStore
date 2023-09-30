@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchAllBooks } from '../redux/books/bookSlice';
 import Book from './Book';
+import '../App.css';
 
 const AllBooks = () => {
   const {
@@ -27,7 +28,7 @@ const AllBooks = () => {
 
   books.forEach((book) => {
     bookElements.push(
-      <div key={book.id}>
+      <div key={book.id} className="wholeSingleBook">
         <Book key={book.id} book={book} />
       </div>,
     );

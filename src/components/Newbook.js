@@ -45,7 +45,7 @@ const Newbook = () => {
             sethandleChaneg({ ...handleChaneg, ...textContaints });
           }}
         />
-        <button type="submit" onClick={handleSubmitChanges}>
+        <button type="submit" onClick={handleSubmitChanges} className="darkBlueBtn">
           Add
         </button>
       </div>
